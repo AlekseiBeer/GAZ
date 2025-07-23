@@ -44,7 +44,7 @@ namespace GasHimApi.API.Controllers
         public async Task<ActionResult<Process>> GetByName(string name)
         {
             var processes = await _processesRepository.GetAllAsync();
-            var process = processes.FirstOrDefault(p => p.Name.Equals(name, System.StringComparison.OrdinalIgnoreCase));
+            var process = processes.FirstOrDefault(p => p.Name!.Equals(name, System.StringComparison.OrdinalIgnoreCase));
             if (process == null)
             {
                 return NotFound();

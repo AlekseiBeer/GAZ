@@ -7,52 +7,36 @@
       "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\controllers\\substancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\designtimechemicaldbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\designtimechemicaldbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\services\\substancesreadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\services\\substancesreadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\gashimapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\gashimapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\services\\isubstancesreadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\services\\isubstancesreadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\data\\chemicaldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\data\\chemicaldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\utils\\substancemappingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\utils\\substancemappingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\datamoduleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\datamoduleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\utils\\cursorhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\utils\\cursorhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\models\\substance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\models\\substance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\dtos\\substancecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\dtos\\substancecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\dtos\\substancequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\dtos\\substancequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\models\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\models\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\dtos\\substancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\dtos\\substancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\data\\processesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\data\\processesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.data\\data\\substancesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2568E3A5-CAB1-4684-A77A-6380F29D1B48}|GasHimApi.Data\\GasHimApi.Data.csproj|solutionrelative:gashimapi.data\\data\\substancesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|c:\\users\\admin\\desktop\\gas\\gashimapi\\gashimapi.api\\dtos\\substancespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9728991-01FD-4716-B7DA-37183B94707F}|GasHimApi.API\\GasHimApi.API.csproj|solutionrelative:gashimapi.api\\dtos\\substancespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,8 +46,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 196,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ISubstancesReadService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Services\\ISubstancesReadService.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Services\\ISubstancesReadService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Services\\ISubstancesReadService.cs",
+              "RelativeToolTip": "GasHimApi.API\\Services\\ISubstancesReadService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:59:04.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SubstanceMappingExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Utils\\SubstanceMappingExtensions.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Utils\\SubstanceMappingExtensions.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Utils\\SubstanceMappingExtensions.cs",
+              "RelativeToolTip": "GasHimApi.API\\Utils\\SubstanceMappingExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:58:01.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CursorHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Utils\\CursorHelper.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Utils\\CursorHelper.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Utils\\CursorHelper.cs",
+              "RelativeToolTip": "GasHimApi.API\\Utils\\CursorHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:52:22.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubstancesReadService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Services\\SubstancesReadService.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Services\\SubstancesReadService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Services\\SubstancesReadService.cs",
+              "RelativeToolTip": "GasHimApi.API\\Services\\SubstancesReadService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:50:50.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SubstanceCreateUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceCreateUpdateDto.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Dtos\\SubstanceCreateUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceCreateUpdateDto.cs",
+              "RelativeToolTip": "GasHimApi.API\\Dtos\\SubstanceCreateUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:47:36.639Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -72,165 +121,48 @@
               "RelativeDocumentMoniker": "GasHimApi.API\\Controllers\\SubstancesController.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Controllers\\SubstancesController.cs",
               "RelativeToolTip": "GasHimApi.API\\Controllers\\SubstancesController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAA0wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T14:50:06.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GasHimApi.Data",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\GasHimApi.Data.csproj",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\GasHimApi.Data.csproj",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\GasHimApi.Data.csproj",
-              "RelativeToolTip": "GasHimApi.Data\\GasHimApi.Data.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-22T14:27:51.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DesignTimeChemicalDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\DesignTimeChemicalDbContextFactory.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\DesignTimeChemicalDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\DesignTimeChemicalDbContextFactory.cs",
-              "RelativeToolTip": "GasHimApi.Data\\DesignTimeChemicalDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T14:28:02.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DataModuleRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\DataModuleRegistration.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\DataModuleRegistration.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\DataModuleRegistration.cs",
-              "RelativeToolTip": "GasHimApi.Data\\DataModuleRegistration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T14:14:45.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DataSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\DataSeeder.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Data\\DataSeeder.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\DataSeeder.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Data\\DataSeeder.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAgwIsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T14:10:21.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "GasHimApi.API\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\appsettings.Development.json",
-              "RelativeToolTip": "GasHimApi.API\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-22T13:54:48.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\appsettings.json",
-              "RelativeDocumentMoniker": "GasHimApi.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\appsettings.json",
-              "RelativeToolTip": "GasHimApi.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-22T13:54:38.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SubstancesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\SubstancesRepository.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Data\\SubstancesRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\SubstancesRepository.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Data\\SubstancesRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:46:31.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Process.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Models\\Process.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Models\\Process.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Models\\Process.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Models\\Process.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:38:57.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Substance.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Models\\Substance.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Models\\Substance.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Models\\Substance.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Models\\Substance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:38:09.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProcessesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\ProcessesRepository.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Data\\ProcessesRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\ProcessesRepository.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Data\\ProcessesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:27:01.735Z",
+              "WhenOpened": "2025-07-23T12:44:16.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\IRepository.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Data\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\IRepository.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Data\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SubstancesPage.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstancesPage.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Dtos\\SubstancesPage.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstancesPage.cs",
+              "RelativeToolTip": "GasHimApi.API\\Dtos\\SubstancesPage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:26:44.057Z",
+              "WhenOpened": "2025-07-23T12:43:16.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChemicalDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\ChemicalDbContext.cs",
-              "RelativeDocumentMoniker": "GasHimApi.Data\\Data\\ChemicalDbContext.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.Data\\Data\\ChemicalDbContext.cs",
-              "RelativeToolTip": "GasHimApi.Data\\Data\\ChemicalDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "SubstanceQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceQuery.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Dtos\\SubstanceQuery.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceQuery.cs",
+              "RelativeToolTip": "GasHimApi.API\\Dtos\\SubstanceQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T13:26:27.62Z",
+              "WhenOpened": "2025-07-23T12:41:48.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SubstanceDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceDto.cs",
+              "RelativeDocumentMoniker": "GasHimApi.API\\Dtos\\SubstanceDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GAS\\GasHimApi\\GasHimApi.API\\Dtos\\SubstanceDto.cs",
+              "RelativeToolTip": "GasHimApi.API\\Dtos\\SubstanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:41:17.472Z",
               "EditorCaption": ""
             }
           ]

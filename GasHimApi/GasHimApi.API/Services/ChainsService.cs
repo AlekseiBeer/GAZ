@@ -32,7 +32,7 @@ namespace GasHimApi.API.Services
             var enriched = EnrichProcesses(processes);
 
             _dfsCallCount = 0;
-            var chains = DFSFromStart(startSubstance, MinDepth, substances.Select(s => s.Name).ToList(), enriched);
+            var chains = DFSFromStart(startSubstance, MinDepth, substances.Select(s => s.Name!).ToList(), enriched);
             _logger.LogInformation("[DFSFromStart] Всего вызовов DFS: {Count}", _dfsCallCount);
             return chains;
         }
@@ -44,7 +44,7 @@ namespace GasHimApi.API.Services
             var enriched = EnrichProcesses(processes);
 
             _reverseDfsCallCount = 0;
-            var chains = ReverseDFSForTarget(targetSubstance, MinDepth, substances.Select(s => s.Name).ToList(), enriched);
+            var chains = ReverseDFSForTarget(targetSubstance, MinDepth, substances.Select(s => s.Name!).ToList(), enriched);
             _logger.LogInformation("[ReverseDFSForTarget] Всего вызовов ReverseDFS: {Count}", _reverseDfsCallCount);
             return chains;
         }
@@ -56,7 +56,7 @@ namespace GasHimApi.API.Services
             var enriched = EnrichProcesses(processes);
 
             _dfsCallCount = 0;
-            var chains = DFS(start, target, substances.Select(s => s.Name).ToList(), enriched);
+            var chains = DFS(start, target, substances.Select(s => s.Name!).ToList(), enriched);
             _logger.LogInformation("[DFS] Всего вызовов DFS: {Count}", _dfsCallCount);
             return chains;
         }
@@ -72,7 +72,7 @@ namespace GasHimApi.API.Services
             var substanceNames = substances.Select(s => s.Name).ToList();
             foreach (var subst in substanceNames)
             {
-                var chains = DFSFromStart(subst, 1, substanceNames, enriched);
+                var chains = DFSFromStart(subst!, 1, substanceNames!, enriched);
                 allChains.AddRange(chains);
             }
             _logger.LogInformation("[Комплексный DFS] Всего вызовов DFS: {Count}", _dfsCallCount);
@@ -94,9 +94,9 @@ namespace GasHimApi.API.Services
                 if (depth >= MaxDepth)
                     return;
                 visited.Add(current);
-                foreach (var proc in processes.Where(p => p.Inputs.Contains(current)))
+                foreach (var proc in processes.Where(p => p.Inputs!.Contains(current)))
                 {
-                    foreach (var output in proc.Outputs)
+                    foreach (var output in proc.Outputs!)
                     {
                         if (!substances.Contains(output))
                             continue;
@@ -128,9 +128,9 @@ namespace GasHimApi.API.Services
                     return;
                 }
                 visited.Add(current);
-                foreach (var proc in processes.Where(p => p.Inputs.Contains(current)))
+                foreach (var proc in processes.Where(p => p.Inputs!.Contains(current)))
                 {
-                    foreach (var output in proc.Outputs)
+                    foreach (var output in proc.Outputs!)
                     {
                         if (!substances.Contains(output))
                             continue;
@@ -161,9 +161,9 @@ namespace GasHimApi.API.Services
                 if (depth >= MaxDepth)
                     return;
                 visited.Add(current);
-                foreach (var proc in processes.Where(p => p.Outputs.Contains(current)))
+                foreach (var proc in processes.Where(p => p.Outputs!.Contains(current)))
                 {
-                    foreach (var input in proc.Inputs)
+                    foreach (var input in proc.Inputs!)
                     {
                         if (!substances.Contains(input))
                             continue;
@@ -203,18 +203,18 @@ namespace GasHimApi.API.Services
         {
             return processes.Select(p => new EnrichedProcess
             {
-                Name = p.Name,
-                Inputs = ParseSubstances(p.MainInputs),
-                Outputs = ParseSubstances(p.MainOutputs)
+                Name = p.Name!,
+                Inputs = ParseSubstances(p.MainInputs!),
+                Outputs = ParseSubstances(p.MainOutputs!)
             }).ToList();
         }
 
         // Вспомогательный класс для удобства работы с данными процессов
         private class EnrichedProcess
         {
-            public string Name { get; set; }
-            public List<string> Inputs { get; set; }
-            public List<string> Outputs { get; set; }
+            public string? Name { get; set; }
+            public List<string>? Inputs { get; set; }
+            public List<string>? Outputs { get; set; }
         }
     }
 }

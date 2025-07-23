@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.Linq; // Добавлено для использования LINQ
 using GasHimApi.Data.Models;
 
 namespace GasHimApi.Data
@@ -16,14 +16,10 @@ namespace GasHimApi.Data
         }
 
         public async Task<List<Process>> GetAllAsync()
-        {
-            return await _context.Processes.ToListAsync();
-        }
+            => await _context.Processes.AsNoTracking().ToListAsync();
 
-        public async Task<Process> GetByIdAsync(int id)
-        {
-            return await _context.Processes.FindAsync(id);
-        }
+        public async Task<Process?> GetByIdAsync(int id)
+            => await _context.Processes.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
 
         public async Task AddAsync(Process process)
         {
@@ -33,37 +29,33 @@ namespace GasHimApi.Data
 
         public async Task UpdateAsync(Process process)
         {
-            _context.Entry(process).State = EntityState.Modified;
+            var exists = await _context.Processes.AnyAsync(p => p.Id == process.Id);
+            if (!exists) throw new InvalidOperationException($"Process {process.Id} not found");
+
+            _context.Processes.Update(process);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var process = await GetByIdAsync(id);
-            if (process != null)
-            {
-                _context.Processes.Remove(process);
-                await _context.SaveChangesAsync();
-            }
+            var process = await _context.Processes.FindAsync(id);
+            if (process == null) return;
+
+            _context.Processes.Remove(process);
+            await _context.SaveChangesAsync();
         }
 
-        /// <summary>
-        /// Полнотекстовый поиск по процессам.
-        /// </summary>
-        /// <param name="query">Строка поиска.</param>
-        /// <returns>Список процессов, удовлетворяющих поиску.</returns>
         public async Task<List<Process>> SearchAsync(string query)
         {
-            if (string.IsNullOrWhiteSpace(query))
-                return new List<Process>();
+            if (string.IsNullOrWhiteSpace(query)) return new List<Process>();
 
             return await _context.Processes
                 .Where(p =>
                     (p.MainInputs != null && p.MainInputs.Contains(query)) ||
                     (p.AdditionalInputs != null && p.AdditionalInputs.Contains(query)) ||
                     (p.MainOutputs != null && p.MainOutputs.Contains(query)) ||
-                    (p.AdditionalOutputs != null && p.AdditionalOutputs.Contains(query))
-                )
+                    (p.AdditionalOutputs != null && p.AdditionalOutputs.Contains(query)))
+                .AsNoTracking()
                 .ToListAsync();
         }
     }

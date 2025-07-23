@@ -13,6 +13,9 @@ builder.Services.AddScoped<ChainsService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ISubstancesReadService, SubstancesReadService>();
+builder.Services.AddScoped<ITestDataService, TestDataService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

@@ -325,6 +325,60 @@
         }
       }
     },
+    "/api/Substances/paged": {
+      "get": {
+        "tags": [
+          "Substances"
+        ],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDtoPagedResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDtoPagedResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDtoPagedResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Substances": {
       "get": {
         "tags": [
@@ -338,7 +392,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Substance"
+                    "$ref": "#/components/schemas/SubstanceDto"
                   }
                 }
               },
@@ -346,7 +400,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Substance"
+                    "$ref": "#/components/schemas/SubstanceDto"
                   }
                 }
               },
@@ -354,7 +408,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Substance"
+                    "$ref": "#/components/schemas/SubstanceDto"
                   }
                 }
               }
@@ -370,24 +424,41 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubstanceDto"
+                }
+              }
+            }
           }
         }
       }
@@ -414,17 +485,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Substance"
+                  "$ref": "#/components/schemas/SubstanceDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Substance"
+                  "$ref": "#/components/schemas/SubstanceDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Substance"
+                  "$ref": "#/components/schemas/SubstanceDto"
                 }
               }
             }
@@ -450,17 +521,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Substance"
+                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
               }
             }
           }
@@ -483,6 +554,41 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TestData/all": {
+      "delete": {
+        "tags": [
+          "TestData"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TestData/seed": {
+      "post": {
+        "tags": [
+          "TestData"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
             }
           }
         ],
@@ -544,7 +650,21 @@
         },
         "additionalProperties": false
       },
-      "Substance": {
+      "SubstanceCreateUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "synonyms": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubstanceDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -558,6 +678,31 @@
           "synonyms": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubstanceDtoPagedResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubstanceDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nextCursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasMore": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
