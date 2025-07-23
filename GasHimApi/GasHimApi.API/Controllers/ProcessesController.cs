@@ -1,83 +1,79 @@
-﻿using GasHimApi.Data;
+﻿using GasHimApi.API.Dtos;
+using GasHimApi.API.Services;
+using GasHimApi.API.Utils;
+using GasHimApi.Data;
 using GasHimApi.Data.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace GasHimApi.API.Controllers
+namespace GasHimApi.API.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class ProcessesController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProcessesController : ControllerBase
+    private readonly IRepository<Process> _repo;
+    private readonly IProcessesReadService _read;
+
+    public ProcessesController(IRepository<Process> repo, IProcessesReadService read)
     {
-        private readonly IRepository<Process> _processesRepository;
+        _repo = repo;
+        _read = read;
+    }
 
-        public ProcessesController(IRepository<Process> processesRepository)
-        {
-            _processesRepository = processesRepository;
-        }
+    // -------- READ (paged) ----------
+    // GET /api/processes/paged?search=&take=50&cursor=
+    [HttpGet("paged")]
+    public async Task<ActionResult<PagedResult<ProcessDto>>> GetPaged(
+        [FromQuery] string? search,
+        [FromQuery] int take = 50,
+        [FromQuery] string? cursor = null,
+        CancellationToken ct = default)
+    {
+        var result = await _read.GetPageAsync(new ProcessQuery(search, take, cursor), ct);
+        return Ok(result);
+    }
 
-        // GET: api/processes
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Process>>> GetAll()
-        {
-            var processes = await _processesRepository.GetAllAsync();
-            return Ok(processes);
-        }
+    // -------- CRUD (DTO) ----------
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ProcessDto>>> GetAll()
+    {
+        var entities = await _repo.GetAllAsync();
+        var dtos = entities.Select(p => p.ToDto());
+        return Ok(dtos);
+    }
 
-        // GET: api/processes/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Process>> Get(int id)
-        {
-            var process = await _processesRepository.GetByIdAsync(id);
-            if (process == null)
-            {
-                return NotFound();
-            }
-            return Ok(process);
-        }
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<ProcessDto>> Get(int id)
+    {
+        var entity = await _repo.GetByIdAsync(id);
+        if (entity is null) return NotFound();
+        return Ok(entity.ToDto());
+    }
 
-        // Новый эндпоинт: GET: api/processes/byname/{name}
-        // Возвращает процесс по его названию (без учета регистра)
-        [HttpGet("byname/{name}")]
-        public async Task<ActionResult<Process>> GetByName(string name)
-        {
-            var processes = await _processesRepository.GetAllAsync();
-            var process = processes.FirstOrDefault(p => p.Name!.Equals(name, System.StringComparison.OrdinalIgnoreCase));
-            if (process == null)
-            {
-                return NotFound();
-            }
-            return Ok(process);
-        }
+    [HttpPost]
+    public async Task<ActionResult<ProcessDto>> Create([FromBody] ProcessDto dto)
+    {
+        var entity = new Process();
+        entity.UpdateEntity(dto);
+        await _repo.AddAsync(entity);
+        return CreatedAtAction(nameof(Get), new { id = entity.Id }, entity.ToDto());
+    }
 
-        // POST: api/processes
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] Process process)
-        {
-            await _processesRepository.AddAsync(process);
-            return CreatedAtAction(nameof(Get), new { id = process.Id }, process);
-        }
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Update(int id, [FromBody] ProcessDto dto)
+    {
+        if (id != dto.Id) return BadRequest("ID mismatch");
+        var entity = await _repo.GetByIdAsync(id);
+        if (entity is null) return NotFound();
+        entity.UpdateEntity(dto);
+        await _repo.UpdateAsync(entity);
+        return NoContent();
+    }
 
-        // PUT: api/processes/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Process process)
-        {
-            if (id != process.Id)
-            {
-                return BadRequest();
-            }
-            await _processesRepository.UpdateAsync(process);
-            return NoContent();
-        }
-
-        // DELETE: api/processes/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _processesRepository.DeleteAsync(id);
-            return NoContent();
-        }
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _repo.DeleteAsync(id);
+        return NoContent();
     }
 }

@@ -19,10 +19,6 @@ namespace GasHimApi.API.Controllers
             _env = env;
         }
 
-        /// <summary>
-        /// Удалить все данные из таблиц (TRUNCATE + RESTART IDENTITY).
-        /// Разрешено только в Development.
-        /// </summary>
         [HttpDelete("all")]
         public async Task<IActionResult> ClearAll(CancellationToken ct)
         {
@@ -33,10 +29,6 @@ namespace GasHimApi.API.Controllers
             return NoContent();
         }
 
-        /// <summary>
-        /// Засидить N тестовых веществ (по умолчанию 1000).
-        /// Разрешено только в Development.
-        /// </summary>
         [HttpPost("seed")]
         public async Task<IActionResult> Seed([FromQuery] int count = 1000, CancellationToken ct = default)
         {
@@ -44,6 +36,28 @@ namespace GasHimApi.API.Controllers
                 return Forbid("Доступ запрещён вне Development.");
 
             await _testDataService.SeedSubstancesAsync(count, ct);
+            return Ok(new { inserted = count });
+        }
+
+        // ----------- НОВЫЕ ЭНДПОИНТЫ ДЛЯ ПРОЦЕССОВ -----------
+
+        [HttpDelete("processes")]
+        public async Task<IActionResult> ClearProcesses(CancellationToken ct)
+        {
+            if (!_env.IsDevelopment())
+                return Forbid("Доступ запрещён вне Development.");
+
+            await _testDataService.ClearProcessesAsync(ct);
+            return NoContent();
+        }
+
+        [HttpPost("processes/seed")]
+        public async Task<IActionResult> SeedProcesses([FromQuery] int count = 300, CancellationToken ct = default)
+        {
+            if (!_env.IsDevelopment())
+                return Forbid("Доступ запрещён вне Development.");
+
+            await _testDataService.SeedProcessesAsync(count, ct);
             return Ok(new { inserted = count });
         }
     }

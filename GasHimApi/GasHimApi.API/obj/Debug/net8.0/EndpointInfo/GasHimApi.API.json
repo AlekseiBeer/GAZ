@@ -118,6 +118,60 @@
         }
       }
     },
+    "/api/Processes/paged": {
+      "get": {
+        "tags": [
+          "Processes"
+        ],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessDtoPagedResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessDtoPagedResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessDtoPagedResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Processes": {
       "get": {
         "tags": [
@@ -163,17 +217,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             }
           }
@@ -243,17 +297,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Process"
+                "$ref": "#/components/schemas/ProcessDto"
               }
             }
           }
@@ -282,45 +336,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Processes/byname/{name}": {
-      "get": {
-        "tags": [
-          "Processes"
-        ],
-        "parameters": [
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Process"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Process"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Process"
-                }
-              }
-            }
           }
         }
       }
@@ -598,6 +613,41 @@
           }
         }
       }
+    },
+    "/api/TestData/processes": {
+      "delete": {
+        "tags": [
+          "TestData"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TestData/processes/seed": {
+      "post": {
+        "tags": [
+          "TestData"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 300
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -646,6 +696,65 @@
           "yieldPercent": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProcessDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainInputs": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInputs": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainOutputs": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalOutputs": {
+            "type": "string",
+            "nullable": true
+          },
+          "yieldPercent": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProcessDtoPagedResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProcessDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nextCursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasMore": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
