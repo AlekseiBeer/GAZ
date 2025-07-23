@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "npm run lint",
+			"command": "npm run lint",
+			"group": "test",
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		}
+	]
+}

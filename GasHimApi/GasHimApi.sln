@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasHimApi.API", "GasHimApi.API\GasHimApi.API.csproj", "{A9728991-01FD-4716-B7DA-37183B94707F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2568E3A5-CAB1-4684-A77A-6380F29D1B48} = {2568E3A5-CAB1-4684-A77A-6380F29D1B48}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasHimApi.Data", "GasHimApi.Data\GasHimApi.Data.csproj", "{2568E3A5-CAB1-4684-A77A-6380F29D1B48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9728991-01FD-4716-B7DA-37183B94707F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9728991-01FD-4716-B7DA-37183B94707F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9728991-01FD-4716-B7DA-37183B94707F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9728991-01FD-4716-B7DA-37183B94707F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2568E3A5-CAB1-4684-A77A-6380F29D1B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2568E3A5-CAB1-4684-A77A-6380F29D1B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2568E3A5-CAB1-4684-A77A-6380F29D1B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2568E3A5-CAB1-4684-A77A-6380F29D1B48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

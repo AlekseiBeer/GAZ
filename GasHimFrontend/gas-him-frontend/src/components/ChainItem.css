@@ -1,0 +1,35 @@
+.chain-container {
+    display: flex;
+    align-items: center;
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .chain-container:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .chain-index {
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  
+  .chain-summary {
+    font-weight: 500;
+  }
+  
+  .substance {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .process {
+    color: #e74c3c;
+    font-weight: 600;
+  }
+  
