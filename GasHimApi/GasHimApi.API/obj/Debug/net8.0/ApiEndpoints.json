@@ -55,7 +55,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.Data.Models.Process, GasHimApi.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.API.Dtos.ProcessDto, GasHimApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -79,7 +79,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.API.Dtos.ProcessDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
@@ -97,7 +107,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "GasHimApi.Data.Models.Process",
+        "Type": "GasHimApi.API.Dtos.ProcessDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

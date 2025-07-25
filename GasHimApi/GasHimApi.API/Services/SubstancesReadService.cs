@@ -27,17 +27,19 @@ public class SubstancesReadService : ISubstancesReadService
                 (x.Synonyms != null && EF.Functions.ILike(x.Synonyms, $"%{s}%")));
         }
 
+        q = q.OrderBy(x => x.Name).ThenBy(x => x.Id);
+
+        // Фильтрация по курсору на уровне запроса
         if (!string.IsNullOrWhiteSpace(query.Cursor))
         {
             var (lastName, lastId) = CursorHelper.Decode(query.Cursor);
-            q = q.Where(x =>
-                string.Compare(x.Name, lastName, StringComparison.Ordinal) > 0 ||
-                (x.Name == lastName && x.Id > lastId));
+            if (!string.IsNullOrEmpty(lastName))
+            {
+                q = q.Where(x => (x.Name == lastName && x.Id > lastId) || string.Compare(x.Name, lastName) > 0);
+            }
         }
 
-        q = q.OrderBy(x => x.Name).ThenBy(x => x.Id);
-
-        var take = query.Take is <= 0 or > 200 ? 50 : query.Take;
+        var take = (query.Take <= 0 || query.Take > 200) ? 50 : query.Take;
         var list = await q.Take(take + 1).ToListAsync(ct);
 
         bool hasMore = list.Count > take;
@@ -45,15 +47,12 @@ public class SubstancesReadService : ISubstancesReadService
         if (hasMore)
         {
             var last = list[take];
-            nextCursor = CursorHelper.Encode(last.Name ?? string.Empty, last.Id);
+            if (!string.IsNullOrEmpty(last.Name))
+                nextCursor = CursorHelper.Encode(last.Name, last.Id);
             list.RemoveAt(take);
         }
 
-        int? total = null; // если захочешь, можешь посчитать await q.CountAsync(ct)
-
-        var items = list.Select(x => new SubstanceDto(x.Id, x.Name ?? string.Empty, x.Synonyms))
-                        .ToList();
-
-        return new PagedResult<SubstanceDto>(items, total, nextCursor, hasMore);
+        var items = list.Select(x => new SubstanceDto(x.Id, x.Name ?? string.Empty, x.Synonyms)).ToList();
+        return new PagedResult<SubstanceDto>(items, null, nextCursor, hasMore);
     }
 }

@@ -17,12 +17,11 @@ public class ProcessesReadService : IProcessesReadService
 
     public async Task<PagedResult<ProcessDto>> GetPageAsync(ProcessQuery query, CancellationToken ct)
     {
-        var take = query.Take <= 0 ? 50 : query.Take;
+        var take = (query.Take <= 0 || query.Take > 200) ? 50 : query.Take;
         var q = _db.Processes.AsNoTracking();
 
         if (!string.IsNullOrWhiteSpace(query.Search))
         {
-            // ILIKE для PostgreSQL
             var pattern = $"%{query.Search.Trim()}%";
             q = q.Where(p =>
                 EF.Functions.ILike(p.Name!, pattern) ||
@@ -32,33 +31,35 @@ public class ProcessesReadService : IProcessesReadService
                 EF.Functions.ILike(p.AdditionalOutputs!, pattern));
         }
 
-        // Курсор
+        q = q.OrderBy(p => p.Name).ThenBy(p => p.Id);
+
+        // Фильтрация по курсору на уровне запроса
         if (!string.IsNullOrEmpty(query.Cursor))
         {
             var (name, id) = CursorHelper.Decode(query.Cursor);
-            // те же правила сортировки
-            q = q.Where(p => string.Compare(p.Name, name, StringComparison.Ordinal) > 0
-                             || (p.Name == name && p.Id > id));
+            if (!string.IsNullOrEmpty(name))
+            {
+                // Для EF Core: сравнение по Name и Id
+                q = q.Where(p => (p.Name == name && p.Id > id) || string.Compare(p.Name, name) > 0);
+            }
         }
 
-        // Сортировка стабильная
-        q = q.OrderBy(p => p.Name).ThenBy(p => p.Id);
+        var list = await q.Take(take + 1).ToListAsync(ct);
 
-        var items = await q.Take(take + 1).ToListAsync(ct);
-
-        var hasMore = items.Count > take;
-        if (hasMore) items.RemoveAt(items.Count - 1);
-
-        var dtos = items.Select(p => p.ToDto()).ToList();
-
+        bool hasMore = list.Count > take;
         string? nextCursor = null;
-        if (hasMore && dtos.Count > 0)
+        if (hasMore)
         {
-            var last = items[^1];
-            nextCursor = CursorHelper.Encode(last.Name!, last.Id);
+            var last = list[take];
+            if (!string.IsNullOrEmpty(last.Name))
+                nextCursor = CursorHelper.Encode(last.Name, last.Id);
+            list.RemoveAt(take);
         }
 
-        // Total можешь не считать – ставь null
+        // Если остался только один элемент (последний), возвращаем его
+        // (логика уже корректна, но добавим явный комментарий)
+
+        var dtos = list.Select(p => p.ToDto()).ToList();
         return new PagedResult<ProcessDto>(dtos, null, nextCursor, hasMore);
     }
 }

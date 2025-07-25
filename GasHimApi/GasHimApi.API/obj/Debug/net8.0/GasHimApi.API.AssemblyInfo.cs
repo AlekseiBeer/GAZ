@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GasHimApi.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fda7016e0de5cd9bab9c40852cd596c33c69bae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b619da9acb90f7d091586212fad66ca52e958ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("GasHimApi.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GasHimApi.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
