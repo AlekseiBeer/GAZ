@@ -1,16 +1,15 @@
 <Project>
   <ItemGroup>
+	  <!-- AutoMapper -->
+    <PackageVersion Include="AutoMapper" Version="15.0.1" />
     <!-- EF Core -->
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.3" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3" />
-
     <!-- PostgreSQL provider -->
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
-
     <!-- Config -->
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
-
     <!-- Swagger -->
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>

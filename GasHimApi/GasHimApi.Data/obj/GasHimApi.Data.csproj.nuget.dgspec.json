@@ -80,6 +80,7 @@
             }
           },
           "centralPackageVersions": {
+            "AutoMapper": "15.0.1",
             "Microsoft.EntityFrameworkCore": "9.0.3",
             "Microsoft.EntityFrameworkCore.Design": "9.0.3",
             "Microsoft.EntityFrameworkCore.Relational": "9.0.3",

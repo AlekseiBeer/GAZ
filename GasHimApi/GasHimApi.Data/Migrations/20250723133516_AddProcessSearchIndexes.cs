@@ -18,16 +18,16 @@ namespace GasHimApi.Data.Migrations
                                    ON ""Processes"" USING gin (LOWER(""Name"") gin_trgm_ops);");
 
             migrationBuilder.Sql(@"CREATE INDEX ix_processes_maininputs_trgm
-                                   ON ""Processes"" USING gin (LOWER(""MainInputs"") gin_trgm_ops);");
+                                   ON ""Processes"" USING gin (LOWER(""PrimaryFeedstocks"") gin_trgm_ops);");
 
             migrationBuilder.Sql(@"CREATE INDEX ix_processes_addinputs_trgm
-                                   ON ""Processes"" USING gin (LOWER(""AdditionalInputs"") gin_trgm_ops);");
+                                   ON ""Processes"" USING gin (LOWER(""SecondaryFeedstocks"") gin_trgm_ops);");
 
             migrationBuilder.Sql(@"CREATE INDEX ix_processes_mainoutputs_trgm
-                                   ON ""Processes"" USING gin (LOWER(""MainOutputs"") gin_trgm_ops);");
+                                   ON ""Processes"" USING gin (LOWER(""PrimaryProducts"") gin_trgm_ops);");
 
             migrationBuilder.Sql(@"CREATE INDEX ix_processes_addoutputs_trgm
-                                   ON ""Processes"" USING gin (LOWER(""AdditionalOutputs"") gin_trgm_ops);");
+                                   ON ""Processes"" USING gin (LOWER(""ByProducts"") gin_trgm_ops);");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

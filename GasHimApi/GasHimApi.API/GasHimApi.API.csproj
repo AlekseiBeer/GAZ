@@ -9,10 +9,12 @@
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-		<ProjectReference Include="..\GasHimApi.Data\GasHimApi.Data.csproj" />
+	  <ProjectReference Include="..\GasHimApi.Services\GasHimApi.Services.csproj" />
+	  <ProjectReference Include="..\GasHimApi.Contracts\GasHimApi.Contracts.csproj" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Update="Microsoft.EntityFrameworkCore.Relational" Version="9.0.3" />
 	</ItemGroup>

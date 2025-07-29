@@ -5,123 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Chains": {
-      "post": {
-        "tags": [
-          "Chains"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChainSearchRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChainSearchRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChainSearchRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Chains/all": {
+    "/api/processes/paged": {
       "get": {
         "tags": [
-          "Chains"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Processes/paged": {
-      "get": {
-        "tags": [
-          "Processes"
+          "ProcessesRead"
         ],
         "parameters": [
           {
@@ -172,10 +59,10 @@
         }
       }
     },
-    "/api/Processes": {
+    "/api/processes": {
       "get": {
         "tags": [
-          "Processes"
+          "ProcessesRead"
         ],
         "responses": {
           "200": {
@@ -211,23 +98,23 @@
       },
       "post": {
         "tags": [
-          "Processes"
+          "ProcessesWrite"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             }
           }
@@ -256,11 +143,12 @@
         }
       }
     },
-    "/api/Processes/{id}": {
+    "/api/processes/{id}": {
       "get": {
         "tags": [
-          "Processes"
+          "ProcessesRead"
         ],
+        "operationId": "GetProcessById",
         "parameters": [
           {
             "name": "id",
@@ -297,7 +185,7 @@
       },
       "put": {
         "tags": [
-          "Processes"
+          "ProcessesWrite"
         ],
         "parameters": [
           {
@@ -314,17 +202,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProcessDto"
+                "$ref": "#/components/schemas/ProcessCreateDto"
               }
             }
           }
@@ -337,7 +225,7 @@
       },
       "delete": {
         "tags": [
-          "Processes"
+          "ProcessesWrite"
         ],
         "parameters": [
           {
@@ -357,10 +245,57 @@
         }
       }
     },
-    "/api/Substances/paged": {
+    "/api/processes/search": {
       "get": {
         "tags": [
-          "Substances"
+          "ProcessesRead"
+        ],
+        "parameters": [
+          {
+            "name": "term",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProcessDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProcessDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProcessDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/substances/paged": {
+      "get": {
+        "tags": [
+          "SubstancesRead"
         ],
         "parameters": [
           {
@@ -411,10 +346,10 @@
         }
       }
     },
-    "/api/Substances": {
+    "/api/substances": {
       "get": {
         "tags": [
-          "Substances"
+          "SubstancesRead"
         ],
         "responses": {
           "200": {
@@ -450,23 +385,23 @@
       },
       "post": {
         "tags": [
-          "Substances"
+          "SubstancesWrite"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceCreateDto"
               }
             }
           }
@@ -495,10 +430,10 @@
         }
       }
     },
-    "/api/Substances/{id}": {
+    "/api/substances/{id}": {
       "get": {
         "tags": [
-          "Substances"
+          "SubstancesRead"
         ],
         "parameters": [
           {
@@ -536,7 +471,7 @@
       },
       "put": {
         "tags": [
-          "Substances"
+          "SubstancesWrite"
         ],
         "parameters": [
           {
@@ -553,17 +488,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubstanceCreateUpdateDto"
+                "$ref": "#/components/schemas/SubstanceUpdateDto"
               }
             }
           }
@@ -576,7 +511,7 @@
       },
       "delete": {
         "tags": [
-          "Substances"
+          "SubstancesWrite"
         ],
         "parameters": [
           {
@@ -592,6 +527,166 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/substances/search": {
+      "get": {
+        "tags": [
+          "SubstancesRead"
+        ],
+        "parameters": [
+          {
+            "name": "term",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubstanceDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubstanceDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubstanceDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SynthesizeChains": {
+      "post": {
+        "tags": [
+          "SynthesizeChains"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChainSearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChainSearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChainSearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SynthesizeChains/all": {
+      "get": {
+        "tags": [
+          "SynthesizeChains"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -683,6 +778,50 @@
         },
         "additionalProperties": false
       },
+      "ProcessCreateDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "primaryFeedstocks": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryFeedstocks": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "primaryProducts": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "byProducts": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "yieldPercentage": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "ProcessDto": {
         "type": "object",
         "properties": {
@@ -694,23 +833,23 @@
             "type": "string",
             "nullable": true
           },
-          "mainInputs": {
+          "primaryFeedstocks": {
             "type": "string",
             "nullable": true
           },
-          "additionalInputs": {
+          "secondaryFeedstocks": {
             "type": "string",
             "nullable": true
           },
-          "mainOutputs": {
+          "primaryProducts": {
             "type": "string",
             "nullable": true
           },
-          "additionalOutputs": {
+          "byProducts": {
             "type": "string",
             "nullable": true
           },
-          "yieldPercent": {
+          "yieldPercentage": {
             "type": "number",
             "format": "double"
           }
@@ -742,14 +881,20 @@
         },
         "additionalProperties": false
       },
-      "SubstanceCreateUpdateDto": {
+      "SubstanceCreateDto": {
+        "required": [
+          "name"
+        ],
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           },
           "synonyms": {
+            "maxLength": 500,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           }
@@ -795,6 +940,26 @@
           },
           "hasMore": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubstanceUpdateDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "synonyms": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -32,22 +32,22 @@ namespace GasHimApi.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdditionalInputs")
+                    b.Property<string>("SecondaryFeedstocks")
                         .HasColumnType("text");
 
-                    b.Property<string>("AdditionalOutputs")
+                    b.Property<string>("ByProducts")
                         .HasColumnType("text");
 
-                    b.Property<string>("MainInputs")
+                    b.Property<string>("PrimaryFeedstocks")
                         .HasColumnType("text");
 
-                    b.Property<string>("MainOutputs")
+                    b.Property<string>("PrimaryProducts")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<double>("YieldPercent")
+                    b.Property<double>("YieldPercentage")
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");

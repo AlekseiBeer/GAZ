@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using GasHimApi.Data.Models;
+using GasHimApi.Data.Data.Repository;
 
 namespace GasHimApi.Data
 {
@@ -21,8 +22,10 @@ namespace GasHimApi.Data
                 options.UseNpgsql(connectionString));
 
             // Регистрируем репозитории
-            services.AddScoped<IRepository<Substance>, SubstancesRepository>();
-            services.AddScoped<IRepository<Process>, ProcessesRepository>();
+            services.AddScoped<IReadRepository<Substance>, SubstanceReadRepository>();
+            services.AddScoped<IWriteRepository<Substance>, SubstanceWriteRepository>();
+            services.AddScoped<IWriteRepository<Process>, ProcessWriteRepository>();
+            services.AddScoped<IReadRepository<Process>, ProcessReadRepository>();
 
             return services;
         }

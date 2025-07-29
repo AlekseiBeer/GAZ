@@ -1,15 +1,358 @@
 [
   {
-    "ContainingType": "GasHimApi.API.Controllers.ChainsController",
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesReadController",
+    "Method": "GetAll",
+    "RelativePath": "api/processes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.Contracts.Processes.ProcessDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesWriteController",
+    "Method": "Create",
+    "RelativePath": "api/processes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createDto",
+        "Type": "GasHimApi.Contracts.Processes.ProcessCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.Processes.ProcessDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesReadController",
+    "Method": "GetById",
+    "RelativePath": "api/processes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.Processes.ProcessDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetProcessById"
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesWriteController",
+    "Method": "Update",
+    "RelativePath": "api/processes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateDto",
+        "Type": "GasHimApi.Contracts.Processes.ProcessCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesWriteController",
+    "Method": "Delete",
+    "RelativePath": "api/processes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesReadController",
+    "Method": "GetPaged",
+    "RelativePath": "api/processes/paged",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "cursor",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.PagedResult\u00601[[GasHimApi.Contracts.Processes.ProcessDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Processes.ProcessesReadController",
+    "Method": "Search",
+    "RelativePath": "api/processes/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.Contracts.Processes.ProcessDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesReadController",
+    "Method": "GetAll",
+    "RelativePath": "api/substances",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.Contracts.Substances.SubstanceDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesWriteController",
     "Method": "Post",
-    "RelativePath": "api/Chains",
+    "RelativePath": "api/substances",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GasHimApi.Contracts.Substances.SubstanceCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.Substances.SubstanceDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesReadController",
+    "Method": "Get",
+    "RelativePath": "api/substances/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.Substances.SubstanceDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesWriteController",
+    "Method": "Put",
+    "RelativePath": "api/substances/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "GasHimApi.Contracts.Substances.SubstanceUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesWriteController",
+    "Method": "Delete",
+    "RelativePath": "api/substances/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesReadController",
+    "Method": "GetPaged",
+    "RelativePath": "api/substances/paged",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "cursor",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GasHimApi.Contracts.PagedResult\u00601[[GasHimApi.Contracts.Substances.SubstanceDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.Substances.SubstancesReadController",
+    "Method": "Search",
+    "RelativePath": "api/substances/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.Contracts.Substances.SubstanceDto, GasHimApi.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GasHimApi.API.Controllers.SynthesizeChains.SynthesizeChainsController",
+    "Method": "Post",
+    "RelativePath": "api/SynthesizeChains",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "GasHimApi.API.Controllers.ChainSearchRequest",
+        "Type": "GasHimApi.API.Controllers.SynthesizeChains.ChainSearchRequest",
         "IsRequired": true
       }
     ],
@@ -26,9 +369,9 @@
     ]
   },
   {
-    "ContainingType": "GasHimApi.API.Controllers.ChainsController",
+    "ContainingType": "GasHimApi.API.Controllers.SynthesizeChains.SynthesizeChainsController",
     "Method": "GetAllChains",
-    "RelativePath": "api/Chains/all",
+    "RelativePath": "api/SynthesizeChains/all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -46,297 +389,7 @@
     ]
   },
   {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "GetAll",
-    "RelativePath": "api/Processes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.API.Dtos.ProcessDto, GasHimApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "Create",
-    "RelativePath": "api/Processes",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "GasHimApi.API.Dtos.ProcessDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.ProcessDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "Get",
-    "RelativePath": "api/Processes/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.ProcessDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "Update",
-    "RelativePath": "api/Processes/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "GasHimApi.API.Dtos.ProcessDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "Delete",
-    "RelativePath": "api/Processes/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.ProcessesController",
-    "Method": "GetPaged",
-    "RelativePath": "api/Processes/paged",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "search",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "take",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "cursor",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.PagedResult\u00601[[GasHimApi.API.Dtos.ProcessDto, GasHimApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "GetAll",
-    "RelativePath": "api/Substances",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[GasHimApi.API.Dtos.SubstanceDto, GasHimApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "Post",
-    "RelativePath": "api/Substances",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "GasHimApi.API.Dtos.SubstanceCreateUpdateDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.SubstanceDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "Get",
-    "RelativePath": "api/Substances/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.SubstanceDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "Put",
-    "RelativePath": "api/Substances/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "GasHimApi.API.Dtos.SubstanceCreateUpdateDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "Delete",
-    "RelativePath": "api/Substances/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.SubstancesController",
-    "Method": "GetPaged",
-    "RelativePath": "api/Substances/paged",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "search",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "take",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "cursor",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "GasHimApi.API.Dtos.PagedResult\u00601[[GasHimApi.API.Dtos.SubstanceDto, GasHimApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "GasHimApi.API.Controllers.TestDataController",
+    "ContainingType": "GasHimApi.API.Controllers.Tests.TestDataController",
     "Method": "ClearAll",
     "RelativePath": "api/TestData/all",
     "HttpMethod": "DELETE",
@@ -346,7 +399,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GasHimApi.API.Controllers.TestDataController",
+    "ContainingType": "GasHimApi.API.Controllers.Tests.TestDataController",
     "Method": "ClearProcesses",
     "RelativePath": "api/TestData/processes",
     "HttpMethod": "DELETE",
@@ -356,7 +409,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GasHimApi.API.Controllers.TestDataController",
+    "ContainingType": "GasHimApi.API.Controllers.Tests.TestDataController",
     "Method": "SeedProcesses",
     "RelativePath": "api/TestData/processes/seed",
     "HttpMethod": "POST",
@@ -372,7 +425,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GasHimApi.API.Controllers.TestDataController",
+    "ContainingType": "GasHimApi.API.Controllers.Tests.TestDataController",
     "Method": "Seed",
     "RelativePath": "api/TestData/seed",
     "HttpMethod": "POST",
