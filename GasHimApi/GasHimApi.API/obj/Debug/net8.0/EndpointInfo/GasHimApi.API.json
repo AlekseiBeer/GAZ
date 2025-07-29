@@ -578,7 +578,7 @@
         }
       }
     },
-    "/api/SynthesizeChains": {
+    "/api/chains": {
       "post": {
         "tags": [
           "SynthesizeChains"
@@ -644,7 +644,7 @@
         }
       }
     },
-    "/api/SynthesizeChains/all": {
+    "/api/chains/all": {
       "get": {
         "tags": [
           "SynthesizeChains"

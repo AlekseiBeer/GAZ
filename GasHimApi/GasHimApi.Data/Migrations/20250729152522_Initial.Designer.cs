@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GasHimApi.Data.Migrations
 {
     [DbContext(typeof(ChemicalDbContext))]
-    [Migration("20250722144446_Initial")]
+    [Migration("20250729152522_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -32,10 +32,11 @@ namespace GasHimApi.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("SecondaryFeedstocks")
+                    b.Property<string>("ByProducts")
                         .HasColumnType("text");
 
-                    b.Property<string>("ByProducts")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PrimaryFeedstocks")
@@ -44,7 +45,7 @@ namespace GasHimApi.Data.Migrations
                     b.Property<string>("PrimaryProducts")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("SecondaryFeedstocks")
                         .HasColumnType("text");
 
                     b.Property<double>("YieldPercentage")

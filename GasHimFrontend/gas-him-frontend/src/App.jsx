@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import StartScreen from './components/StartScreen';
-import SubstancesPage from './components/SubstancesPage';
-import ProcessesPage from './components/ProcessesPage';
+import ChainsPage from './pages/chains/ChainsPage';
+import SubstancesPage from './pages/substances/SubstancesPage';
+import ProcessesPage from './pages/processes/ProcessesPage';
+import TestPage from './pages/test/TestPage';
 import './App.css';
 
 function App() {
@@ -14,10 +15,12 @@ function App() {
         <button className={tab === 'chains' ? 'active' : ''} onClick={() => setTab('chains')}>Синтез цепочек</button>
         <button className={tab === 'substances' ? 'active' : ''} onClick={() => setTab('substances')}>Вещества</button>
         <button className={tab === 'processes' ? 'active' : ''} onClick={() => setTab('processes')}>Процессы</button>
+        <button className={tab === 'test' ? 'active' : ''} onClick={() => setTab('test')}>Тест</button>
       </nav>
-      {tab === 'chains' && <StartScreen />}
+      {tab === 'chains' && <ChainsPage />}
       {tab === 'substances' && <SubstancesPage />}
       {tab === 'processes' && <ProcessesPage />}
+      {tab === 'test' && <TestPage />}
     </div>
   );
 }

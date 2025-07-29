@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getSubstances, synthesizeChains, synthesizeAllChains } from '../services/api';
-import ChainList from './ChainList';
+import ChainList from '../pages/chains/components/ChainList';
 import './StartScreen.css';
 
 const StartScreen = () => {

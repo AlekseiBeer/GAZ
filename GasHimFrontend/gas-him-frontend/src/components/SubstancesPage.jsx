@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { getSubstancesPaged } from '../services/api';
 import './SubstancesPage.css';
 
 function SubstancesPage() {
@@ -11,23 +13,20 @@ function SubstancesPage() {
   const listRef = useRef(null);
 
   // Загрузка первой страницы или при поиске
-  const fetchFirstPage = useCallback(() => {
+  const fetchFirstPage = useCallback(async () => {
     setLoading(true);
     setError(null);
     setCursor(null);
     setHasMore(true);
-    fetch(`/api/substances/paged?search=${encodeURIComponent(search)}&take=50`)
-      .then(res => res.json())
-      .then(data => {
-        setSubstances(data.items || []);
-        setCursor(data.nextCursor || null);
-        setHasMore(data.hasMore);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError('Ошибка загрузки');
-        setLoading(false);
-      });
+    try {
+      const data = await getSubstancesPaged({ search, take: 50 });
+      setSubstances(data.items || []);
+      setCursor(data.nextCursor || null);
+      setHasMore(data.hasMore);
+    } catch (e) {
+      setError('Ошибка загрузки');
+    }
+    setLoading(false);
   }, [search]);
 
   useEffect(() => {
@@ -35,21 +34,18 @@ function SubstancesPage() {
   }, [fetchFirstPage]);
 
   // Подгрузка следующей страницы
-  const loadMore = useCallback(() => {
+  const loadMore = useCallback(async () => {
     if (!hasMore || loading || !cursor) return;
     setLoading(true);
-    fetch(`/api/substances/paged?search=${encodeURIComponent(search)}&take=50&cursor=${encodeURIComponent(cursor)}`)
-      .then(res => res.json())
-      .then(data => {
-        setSubstances(prev => [...prev, ...(data.items || [])]);
-        setCursor(data.nextCursor || null);
-        setHasMore(data.hasMore);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError('Ошибка загрузки');
-        setLoading(false);
-      });
+    try {
+      const data = await getSubstancesPaged({ search, take: 50, cursor });
+      setSubstances(prev => [...prev, ...(data.items || [])]);
+      setCursor(data.nextCursor || null);
+      setHasMore(data.hasMore);
+    } catch (e) {
+      setError('Ошибка загрузки');
+    }
+    setLoading(false);
   }, [cursor, hasMore, loading, search]);
 
   // Обработчик скролла

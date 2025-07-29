@@ -1,0 +1,48 @@
+.list-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 0 0 0;
+}
+.list-page-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.list-page-search {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.list-page-refresh {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.list-page-refresh:hover {
+  background: #1256a2;
+}
+.list-page-scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px 12px 8px 12px;
+  background: #fafbfc;
+}
+.list-page-end {
+  padding: 10px;
+  color: #888;
+  text-align: center;
+}
+.card-secondary {
+  color: #666;
+  font-size: 0.95em;
+  margin-top: 4px;
+}

@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { getProcessesPaged } from '../services/api';
 import './ProcessesPage.css';
 
 function ProcessesPage() {
@@ -11,23 +13,20 @@ function ProcessesPage() {
   const listRef = useRef(null);
 
   // Загрузка первой страницы или при поиске
-  const fetchFirstPage = useCallback(() => {
+  const fetchFirstPage = useCallback(async () => {
     setLoading(true);
     setError(null);
     setCursor(null);
     setHasMore(true);
-    fetch(`/api/processes/paged?search=${encodeURIComponent(search)}&take=50`)
-      .then(res => res.json())
-      .then(data => {
-        setProcesses(data.items || []);
-        setCursor(data.nextCursor || null);
-        setHasMore(data.hasMore);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError('Ошибка загрузки');
-        setLoading(false);
-      });
+    try {
+      const data = await getProcessesPaged({ search, take: 50 });
+      setProcesses(data.items || []);
+      setCursor(data.nextCursor || null);
+      setHasMore(data.hasMore);
+    } catch (e) {
+      setError('Ошибка загрузки');
+    }
+    setLoading(false);
   }, [search]);
 
   useEffect(() => {
@@ -35,21 +34,18 @@ function ProcessesPage() {
   }, [fetchFirstPage]);
 
   // Подгрузка следующей страницы
-  const loadMore = useCallback(() => {
+  const loadMore = useCallback(async () => {
     if (!hasMore || loading || !cursor) return;
     setLoading(true);
-    fetch(`/api/processes/paged?search=${encodeURIComponent(search)}&take=50&cursor=${encodeURIComponent(cursor)}`)
-      .then(res => res.json())
-      .then(data => {
-        setProcesses(prev => [...prev, ...(data.items || [])]);
-        setCursor(data.nextCursor || null);
-        setHasMore(data.hasMore);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError('Ошибка загрузки');
-        setLoading(false);
-      });
+    try {
+      const data = await getProcessesPaged({ search, take: 50, cursor });
+      setProcesses(prev => [...prev, ...(data.items || [])]);
+      setCursor(data.nextCursor || null);
+      setHasMore(data.hasMore);
+    } catch (e) {
+      setError('Ошибка загрузки');
+    }
+    setLoading(false);
   }, [cursor, hasMore, loading, search]);
 
   // Обработчик скролла

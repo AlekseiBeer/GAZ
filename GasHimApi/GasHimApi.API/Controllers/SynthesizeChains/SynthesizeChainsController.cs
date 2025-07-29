@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace GasHimApi.API.Controllers.SynthesizeChains
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/chains")]
     public class SynthesizeChainsController : ControllerBase
     {
         private readonly ChainsService _chainsService;
